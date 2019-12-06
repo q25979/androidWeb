@@ -1,0 +1,39 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml:1:1-8:12
+INJECTED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml:1:1-8:12
+INJECTED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml:1:1-8:12
+INJECTED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml:1:1-8:12
+INJECTED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml:1:1-8:12
+INJECTED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml:1:1-8:12
+INJECTED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml:1:1-8:12
+	package
+		ADDED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml:2:1-31
+		INJECTED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml
+		INJECTED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml
+	android:versionName
+		ADDED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml:4:1-26
+		INJECTED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml
+		INJECTED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml:1:11-69
+	android:versionCode
+		ADDED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml:3:1-24
+		INJECTED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml
+		INJECTED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml
+application
+ADDED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml:6:5-20
+uses-sdk
+INJECTED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml
+INJECTED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml
+INJECTED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml
+INJECTED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml
+		ADDED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml
+		INJECTED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml
+		ADDED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml
+		INJECTED from /Src/androidProject/Yisuan001/library/src/main/AndroidManifest.xml
