@@ -7,10 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
-import android.webkit.WebView;
-import android.widget.ImageView;
+import com.yisuan.yisuan001.bean.Real;
 
-import com.jaeger.library.StatusBarUtil;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     private Handler handler;
@@ -20,16 +21,38 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         hideAction();
+        reqReal();
+    }
 
-        // 延时操作
-        handler = new Handler();
-        handler.postDelayed(new Runnable() {
+    // 真实页面
+    public void reqReal() {
+        HttpClient httpClient = new HttpClient();
+        Server server = httpClient.builer().create(Server.class);
+
+        Call<Real> call = server.getRealUrl("android", 1, 20972);
+        call.enqueue(new Callback<Real>() {
             @Override
-            public void run() {
-                startActivity(new Intent(MainActivity.this, WebActive.class));
-                finish();
+            public void onResponse(Call<Real> call, Response<Real> response) {
+                Real real = response.body();
+
+                System.out.println("数据接收: " + real.getCode());
+                // 延时操作
+                handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(new Intent(MainActivity.this, WebActive.class));
+                        finish();
+                    }
+                }, 100);
             }
-        }, 1000);
+
+            @Override
+            public void onFailure(Call<Real> call, Throwable t) {
+                System.out.println("数据接收失败～～～ ");
+                t.printStackTrace();
+            }
+        });
     }
 
     // 隐藏标题栏

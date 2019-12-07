@@ -22,11 +22,11 @@ public class WebActive extends AppCompatActivity {
         hideAction();
         StyledDialog.init(this);
 
-        String url = "https://www.baidu.com";
+        String url = "http://qp.dawanjia.org/";
         LinearLayout llView = findViewById(R.id.web_active);
         mAgentWeb = AgentWeb.with(this)
                 .setAgentWebParent(llView, new LinearLayout.LayoutParams(-1, -1))
-                .useDefaultIndicator()
+                .useDefaultIndicator(-1, 0)
                 .createAgentWeb()
                 .ready()
                 .go(url);
@@ -70,7 +70,7 @@ public class WebActive extends AppCompatActivity {
 
     // 设置状态栏颜色
     public void setStatusColor() {
-        StatusBarUtil.setColor(WebActive.this, getResources().getColor(R.color.themeColor));
+        StatusBarUtil.setColor(WebActive.this, getResources().getColor(R.color.themeColor), 1);
     }
 
     @Override
