@@ -22,7 +22,7 @@ public class WebActive extends AppCompatActivity {
         hideAction();
         StyledDialog.init(this);
 
-        String url = "http://qp.dawanjia.org/";
+        String url = StringUrl.url;
         LinearLayout llView = findViewById(R.id.web_active);
         mAgentWeb = AgentWeb.with(this)
                 .setAgentWebParent(llView, new LinearLayout.LayoutParams(-1, -1))
@@ -30,6 +30,8 @@ public class WebActive extends AppCompatActivity {
                 .createAgentWeb()
                 .ready()
                 .go(url);
+        mAgentWeb.getAgentWebSettings().getWebSettings().setUseWideViewPort(true);
+        mAgentWeb.getAgentWebSettings().getWebSettings().setLoadWithOverviewMode(true);
     }
 
     @Override

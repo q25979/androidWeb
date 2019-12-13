@@ -8,14 +8,28 @@ android {
         minSdkVersion 15
         targetSdkVersion 29
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a','x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "28649336a511f8d913f690b6", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL : "developer-default" //暂时填写默认值即可.
+        ]
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
     }
 }
 
@@ -38,4 +52,6 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    implementation 'cn.jiguang.sdk:jpush:3.1.1'
+    implementation 'cn.jiguang.sdk:jcore:1.1.9'
 }

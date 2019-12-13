@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.view.WindowManager;
 import com.yisuan.yisuan001.bean.Real;
 
+import cn.jpush.android.api.JPushInterface;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -20,8 +21,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        hideAction();
-        reqReal();
+         initPush();
+         hideAction();
+         reqReal();
+    }
+
+    // 初始化极光推送
+    public void initPush() {
+        JPushInterface.setDebugMode(false);
+        JPushInterface.init(this);
     }
 
     // 真实页面
@@ -35,7 +43,10 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<Real> call, Response<Real> response) {
                 Real real = response.body();
 
-                System.out.println("数据接收: " + real.getCode());
+                if (real.getIsWap() == 1) {
+                    StringUrl.url = real.getWapUrl();
+                }
+
                 // 延时操作
                 handler = new Handler();
                 handler.postDelayed(new Runnable() {
@@ -44,12 +55,12 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(MainActivity.this, WebActive.class));
                         finish();
                     }
-                }, 100);
+                }, 1000);
             }
 
             @Override
             public void onFailure(Call<Real> call, Throwable t) {
-                System.out.println("数据接收失败～～～ ");
+//                System.out.println("数据接收失败～～～ ");
                 t.printStackTrace();
             }
         });

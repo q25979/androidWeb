@@ -8,9 +8,11 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/startImage"
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/lh">
-    </ImageView>
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:srcCompat="@drawable/lh"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
